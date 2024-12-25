@@ -114,18 +114,19 @@
         }
 
         .close-btn {
-            background-color: #e74c3c;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            float: right;
-        }
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block; /* This ensures the button behaves as a block element */
+    margin: 0 auto; /* Centers the button horizontally */
+}
 
-        .close-btn:hover {
-            background-color: #c0392b;
-        }
+.close-btn:hover {
+    background-color: #c0392b;
+}
 
         /* Blank Game Item for Spacing */
         .blank-game {
