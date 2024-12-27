@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drews Unblocker</title>
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSd2hFJE8BcyQs3vQFWTh_273FD4T9PUIXW_APy7UKmchXNkwg/viewform?usp=dialog/" target="_blank">Request A Game!</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd2hFJE8BcyQs3vQFWTh_273FD4T9PUIXW_APy7UKmchXNkwg/viewform?usp=dialog/" target="_blank">Request A Game!</a>
     <style>
-
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
@@ -26,7 +25,6 @@
             font-size: 2em;
             margin-top: 20px;
         }
-
 
         .games-container {
             width: 80%;
@@ -123,8 +121,8 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            display: block; 
-            margin: 0 auto; 
+            display: block;
+            margin: 0 auto;
         }
 
         .close-btn:hover {
@@ -163,17 +161,33 @@
             right: 0;
             margin-right: 20px;
         }
+
+        /* View counter styles */
+        #view-counter {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 <body>
 
-   
+    <!-- View Counter -->
+    <div id="view-counter">Views: 0</div>
+
     <!-- Main Content -->
     <h1>Drews Unblocker</h1>
 
     <div class="games-container">
+        <!-- Game Items (as in your original code) -->
 
-<!-- Game Item 2: Unblocked browser -->
+       <!-- Game Item 2: Unblocked browser -->
 <div class="game-item">
     <img src="https://cdn3.iconfinder.com/data/icons/glypho-generic-icons/64/lock-unlocked-512.png" alt="Stack Bounce">
     <button class="play-button" onclick="openGame('https://small-kids.foxgateway.com')">Open Unblocked Browser</button>
@@ -246,7 +260,7 @@
 
 <!-- Game Item 2: Moto x3m -->
 <div class="game-item">
-    <img src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/2c6d5a46cdbceada277c870ce1c389ee.jpg" alt="Stack Bounce">
+    <img src="https://cdn.jogos360.com.br/mo/to/moto-3xm-2-d.jpg" alt="Moto x3m">
     <button class="play-button" onclick="openGame('https://lablockedgames.com/funblocked/moto-x3m/index.html')">Play Moto x3m</button>
 </div>
 
@@ -255,6 +269,7 @@
     <img src="https://m.media-amazon.com/images/I/71OWWCZNouL._AC_UF894,1000_QL80_.jpg" alt="Stack Bounce">
     <button class="play-button" onclick="openGame('https://unblockeds-games.com/games/super-mario-bros/index.html')">Play Super Mario</button>
 </div>
+
 
     <!-- Modal for Game -->
     <div id="game-modal" class="modal">
@@ -266,6 +281,12 @@
 
     <script>
         let iframeLoaded = false;
+
+        // View counter functionality
+        let viewCount = localStorage.getItem('viewCount') ? parseInt(localStorage.getItem('viewCount')) : 0;
+        viewCount++;
+        localStorage.setItem('viewCount', viewCount);
+        document.getElementById('view-counter').textContent = `Views: ${viewCount}`;
 
         function openGame(gameUrl) {
             const iframe = document.getElementById('game-iframe');
@@ -294,7 +315,6 @@
             iframeLoaded = false;
         }
     </script>
-
   
 </body>
 </html>
